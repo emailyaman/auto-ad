@@ -46,9 +46,29 @@ async def stop_spam(event):
     else:
         await event.reply("ℹ️ No active spam task here.")
 
+async def health_check(request):
+    return web.Response(text="Bot is running")
+
+async def start_web_server():
+    app = web.Application()
+    app.router.add_get('/', health_check)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    site = web.TCPSite(runner, '0.0.0.0', 8080)
+    await site.start()
+    print("HTTP server started on port 8080")
+
 async def main():
-    await client.start()
-    print("Bot is running...")
+    print("Starting HTTP server...")
+    await start_web_server()
+    
+    print("Starting Telegram bot...")
+    try:
+        await client.start()
+        print("Bot connected successfully!")
+    except Exception as e:
+        print(f"Error connecting to Telegram: {e}")
+    
     await client.run_until_disconnected()
 
 asyncio.run(main())
