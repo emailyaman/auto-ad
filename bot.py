@@ -3,9 +3,9 @@ from telethon.sessions import StringSession
 import asyncio
 from aiohttp import web
 
-api_id = 123456
-api_hash = "YOUR_API_HASH"
-SESSION = "YOUR_SESSION_STRING_HERE"
+api_id = 27502961
+api_hash = "b8d9acdc18d1352241239aab9e348fa5"
+SESSION = "1BVtsOGoBu4YjwHkBYKqTHv7UKFzNIeBH4e74jBnffrlufrN9oQdjza1Kvp4pLUG4RYK6BjCosbhqaF46kZ2IwyMRYw3YrrsU3vjFA6fYaipX2QajhqVhj7QO9NDIQjz1pKNvMkHeyllVpf1c9CDu4OHNgbl4gpFq2LRNi9POO4SUppfyij3b3wmR468f5omzzRFqAwAl56b6W8m-aipIkW0nK1zvGLFdKgJnV6Bv7j19umIlVunkbfHp8N9Mt7P7u63K25ufwB2_0gPSOXe4dff-pmkElkdEYoNhqVzg9q5VURWNjWAEoLrajDewn0x2XabJHTjurz49Jxjln4B2PWdsmXldFNY="
 
 client = TelegramClient(StringSession(SESSION), api_id, api_hash)
 
